@@ -10,7 +10,7 @@ function header() {
           alt="Facebook Logo"
         />
       </div>
-      "<div className="header__middle"></div>
+      "<div className="header__middle">This is the middle section</div>
       <div className="header__right"></div>
       <h1>bhwfb</h1>
     </div>
