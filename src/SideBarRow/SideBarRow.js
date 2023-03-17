@@ -10,11 +10,11 @@ import React from "react";
 import "./SideBarRow.css";
 /*function SideBarRow(props)or you can just pass in the '{title}' and not props then in the 'p'tag just
 write <p>{title}</p>*/
-function SideBarRow(src, Icon, title) {
+function SideBarRow({ src, title, Icon }) {
   /*'src' will be for the usrs image, then the 'icon' for the icons against the titles.*/
   return (
     <div className="SideBarRow">
-      {src && <Avatar src={src} />}{" "}
+      {src && <Avatar src={src} />}
       {/*if tehre is a source then we are gg toreturn an avatar with the
       source being used as the source of the prop*/}
       {Icon && <Icon />}
