@@ -1,5 +1,17 @@
 import React from "react";
 import "./Header.css";
+import SearchIcon from "@material-ui/icons/Search";
+import HomeIcon from "@material-ui/icons/Home";
+import FlagIcon from "@material-ui/icons/Flag";
+import SubscriptionsOutlinedIcon from "@material-ui/icons/SubscriptionsOutlined";
+import StorefrontOutlinedIcon from "@material-ui/icons/StorefrontOutlined";
+import SupervisedUserCircleOutlinedIcon from "@material-ui/icons/SupervisedUserCircleOutlined";
+import { Avatar, IconButton } from "@material-ui/core";
+/*import { Avatar, IconButton} from "@material-ui/core";*/
+import AddIcon from "@material-ui/icons/Add";
+import ForumIcon from "@material-ui/icons/Forum";
+import NotificationsActiveIcon from "@material-ui/icons/NotificationsActive";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
 function header() {
   return (
@@ -9,10 +21,62 @@ function header() {
           src="https://www.facebookbrand.com/wp-content/uploads/2019/04/f_logo_RGB-Hex-Blue_512.png"
           alt="Facebook Logo"
         />
+        <div className="header__input">
+          <SearchIcon />
+          <input placeholder="search facebook" type="text" />
+        </div>
       </div>
-      "<div className="header__middle">This is the middle section</div>
-      <div className="header__right"></div>
-      <h1>bhwfb</h1>
+      <div className="header__middle">
+        <div
+          className="header__option
+        header__option--active"
+        >
+          {" "}
+          {/*we add this other class name on homeicon coz we want it to have a blue line below*/}
+          <HomeIcon fontsize="large" />
+        </div>
+        <div className="header__option">
+          <FlagIcon fontsize="large" />
+        </div>
+        <div className="header__option">
+          <SubscriptionsOutlinedIcon fontsize="large" />
+        </div>
+        <div className="header__option">
+          <StorefrontOutlinedIcon fontsize="large" />
+        </div>
+        <div className="header__option">
+          <SupervisedUserCircleOutlinedIcon fontsize="large" />
+        </div>
+      </div>
+      <div className="header__right">
+        <div className="header__info">
+          <Avatar />
+          <h4>mirembe</h4>
+        </div>
+        <IconButton>
+          {" "}
+          {/*we create icon button component to wrap the addicon */}
+          <AddIcon />
+        </IconButton>
+
+        <IconButton>
+          {" "}
+          {/*we create icon button component to wrap the addicon */}
+          <ForumIcon />
+        </IconButton>
+
+        <IconButton>
+          {" "}
+          {/*we create icon button component to wrap the addicon */}
+          <NotificationsActiveIcon />
+        </IconButton>
+
+        <IconButton>
+          {" "}
+          {/*we create icon button component to wrap the addicon */}
+          <ExpandMoreIcon />
+        </IconButton>
+      </div>
     </div>
   );
 }
