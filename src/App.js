@@ -10,21 +10,18 @@ import React from "react";
 import "./App.css";
 import Header from "./Header/Header.js";
 import Sidebar from "./Sidebar/Sidebar";
-import Feed from "./Feed/Feed";
+import Feed from "./Feed/Feed.js";
 function App() {
   return (
     <div className="app">
       {/*WE CALL OUR HEADER COMPONENT*/}
       <Header />
-
       <div className="app_body">
         <Sidebar />
         <Feed />
-
         {/*widgets*/}
       </div>
     </div>
   );
 }
-
 export default App;

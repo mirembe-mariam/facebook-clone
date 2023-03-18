@@ -10,7 +10,8 @@ import "./Sidebar.css";
 function Sidebar() {
   return (
     <div className="Sidebar">
-      <SideBarRow src="../Image1/WhatsApp Image 2023-03-18 at 00.55.48.jpeg" title="mirembe mariam" />
+      <SideBarRow src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTieTWwY4fbW7B8kkq6jOzIikdWu25eVY2cBg&usqp=CAU"
+       title="mirembe mariam" />
       <SideBarRow Icon={EmojiFlagsIcon} title="Pages" />
       <SideBarRow
         Icon={LocalHospitalIcon}

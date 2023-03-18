@@ -1,0 +1,8 @@
+.Feed{
+    flex:1;
+    padding: 30px 150px;/*left and top*/
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
