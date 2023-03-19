@@ -11,17 +11,32 @@ import "./App.css";
 import Header from "./Header/Header.js";
 import Sidebar from "./Sidebar/Sidebar";
 import Feed from "./Feed/Feed.js";
+import Login from "./Login/Login.js";
+
 /*import Wiggets from "./Wiggets/Wiggets.js";*/
-function App() {
+function App() {/*if i set const user="null" its considered a truthy statement in js therefore it displays the fb build but if i set it to const user=null without the ""
+   it displays "login"*/
+  const user = null;/*In this case,the user variable is being used to store the user object or data,and it is initially set to null.The purpose of this variable is to 
+  determine whether the user is logged in or not, which in turn will determine what content is displayed on the page.The const keyword is used to declare a variable that
+  is immutable or cannot be reassigned. Since user is not being reassigned in this component, using const is appropriate.*/
   return (
     <div className="app">
-      {/*WE CALL OUR HEADER COMPONENT*/}
-      <Header />
-      <div className="app_body">
-        <Sidebar />
-        <Feed />
-       {/*<Wiggets />*/}
-      </div>
+     {/*The expression inside the ternary operator checks whether user is falsy (in this case, whether it is null).If user is falsy, the component will render an 
+      h1 element with the text "Login". This is done using the logical NOT operator (!) to invert the truthiness of the user variable. If user is truthy, the component will
+  render several other components, including a Header, a Sidebar, and a Feed*/}
+      {!user ? (
+        <Login/>
+      ) : (
+        <>
+          {/*WE CALL OUR HEADER COMPONENT*/}
+          <Header />
+          <div className="app_body">
+            <Sidebar />
+            <Feed />
+            {/*<Wiggets />*/}
+          </div>
+        </>
+      )}
     </div>
   );
 }
