@@ -6,6 +6,7 @@ import LocalHospitalIcon from "@material-ui/icons/LocalHospital";
 import PeopleIcon from "@material-ui/icons/People";
 import ChatIcon from "@material-ui/icons/Chat";
 import SideBarRow from "../SideBarRow/SideBarRow";
+import React from "react";
 import "./Sidebar.css";
 function Sidebar() {
   return (
