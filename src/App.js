@@ -11,6 +11,7 @@ import "./App.css";
 import Header from "./Header/Header.js";
 import Sidebar from "./Sidebar/Sidebar";
 import Feed from "./Feed/Feed.js";
+/*import Wiggets from "./Wiggets/Wiggets.js";*/
 function App() {
   return (
     <div className="app">
@@ -19,7 +20,7 @@ function App() {
       <div className="app_body">
         <Sidebar />
         <Feed />
-        {/*widgets*/}
+       {/*<Wiggets />*/}
       </div>
     </div>
   );
