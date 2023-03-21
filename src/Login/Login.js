@@ -3,16 +3,34 @@ import "./Login.css";
 import { Button } from "@material-ui/core";
 import { auth, provider } from "../Firebase";
 import { signInWithPopup } from "firebase/auth";
-
+import { actionTypes } from "../reducer/reducer";
+import { useStateValue } from "../StateProvider/StateProvider";
+//import { EmailAuthProvider } from "firebase/auth";
 function Login() {
+  const [state,dispatch] =  useStateValue();
   const signIn = () => {
     //sign in...(we have craeted a function wen one clicks submit)
     signInWithPopup(auth, provider)
       .then((result) => {
-        console.log(result);
+        dispatch({
+          type: actionTypes.SET_USER,
+          user: result.user,
+        //console.log(result.user);
+        });
       })
       .catch((error) => alert(error.message));
   };
+  //createUserWithEmailAndPassword(auth, email, password)
+  //.then((userCredential) => {
+    // Signed in 
+    //const user = userCredential.user;
+    // ...
+  //})
+  //.catch((error) => {
+    //const errorCode = error.code;
+    //const errorMessage = error.message;
+    // ..
+  //});
   return (
     <div className="login">
       <div className="login_logo">

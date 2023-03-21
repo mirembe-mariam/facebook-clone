@@ -2,6 +2,9 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore/lite";
 import { GoogleAuthProvider, getAuth } from "firebase/auth";
+//import { EmailAuthProvider } from "firebase/auth";
+
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -22,6 +25,11 @@ const firebaseApp = initializeApp(firebaseConfig);
 const db = getFirestore(firebaseApp);
 const auth = getAuth(firebaseApp);
 const provider = new GoogleAuthProvider();
+//const credential = EmailAuthProvider.credential(email, password);
+
+
+//const auth = getAuth();
+
 
 export { auth, provider };
 
