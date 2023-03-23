@@ -7,12 +7,18 @@ import PeopleIcon from "@material-ui/icons/People";
 import ChatIcon from "@material-ui/icons/Chat";
 import SideBarRow from "../SideBarRow/SideBarRow";
 import React from "react";
+import { useStateValue } from "../StateProvider/StateProvider";
+//mport firebase from "../Firebase.js"
+//import 'firebase/auth'
+import { auth, provider } from "../Firebase";
 import "./Sidebar.css";
 function Sidebar() {
+  //const user = firebase.auth().currentUser;
+  const [{user},dispatch] = useStateValue();
   return (
     <div className="Sidebar">
-      <SideBarRow src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTieTWwY4fbW7B8kkq6jOzIikdWu25eVY2cBg&usqp=CAU"
-       title="mirembe mariam" />
+      <SideBarRow src={user.photoURL}
+       title={user.displayName} />
       <SideBarRow Icon={EmojiFlagsIcon} title="Pages" />
       <SideBarRow
         Icon={LocalHospitalIcon}

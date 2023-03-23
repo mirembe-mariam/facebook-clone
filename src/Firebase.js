@@ -1,15 +1,8 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
-import { getFirestore } from "firebase/firestore/lite";
+//import { getFirestore } from "firebase/firestore/lite";
 import { GoogleAuthProvider, getAuth } from "firebase/auth";
-//import { EmailAuthProvider } from "firebase/auth";
-
-
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+//import { getFirestore } from 'firebase/firestore';
+import { getFirestore, collection, onSnapshot } from 'firebase/firestore';
 const firebaseConfig = {
   apiKey: "AIzaSyC5AEsok1VRjWi1Tw6fJr0c7JQpaObyv7A",
   authDomain: "facebook-clone-a3dab.firebaseapp.com",
@@ -19,18 +12,47 @@ const firebaseConfig = {
   appId: "1:319819563769:web:1c18b91972f62c860fd828",
   measurementId: "G-KC3BKT4FN2",
 };
-
-// Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
+//const user = firebase.auth().currentUser;
 const db = getFirestore(firebaseApp);
 const auth = getAuth(firebaseApp);
 const provider = new GoogleAuthProvider();
+const postsRef = collection(db, 'posts');
+
+export const fetchPosts = (setPosts) => {
+  onSnapshot(postsRef, (snapshot) => {
+    const posts = snapshot.docs.map((doc) => {
+      return { id: doc.id, ...doc.data() };
+    });
+    setPosts(posts);
+  });
+};
+
+// Define the user variable
+
+// Use the user variable in your code
+
+export { auth, provider };
+
+export default db;
+
+
+
+
+// Initialize Firebase
+//const db = getFirestore();
+
 //const credential = EmailAuthProvider.credential(email, password);
 
 
 //const auth = getAuth();
 
 
-export { auth, provider };
+  // Your app's Firebase configuration
 
-export default db;
+
+
+
+
+
+

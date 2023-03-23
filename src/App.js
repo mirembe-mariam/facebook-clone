@@ -13,7 +13,7 @@ import Sidebar from "./Sidebar/Sidebar";
 import Feed from "./Feed/Feed.js";
 import Login from "./Login/Login.js";
 import { useStateValue } from "./StateProvider/StateProvider";
-/*import Wiggets from "./Wiggets/Wiggets.js";*/
+//import Wiggets from "./Wiggets/Wiggets.js";
 function App() {
   const [{ user}, dispatch] = useStateValue();/*if i set const user="null" its considered a truthy statement in js therefore it displays the fb build but if i set it to const user=null without the ""
    it displays "login"*/
